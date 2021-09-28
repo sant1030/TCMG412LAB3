@@ -6,3 +6,71 @@ LOCAL_FILE = 'local_copy.log'
 # Use urlretrieve() to fetch a remote copy and save into the local file path
 local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
 
+
+
+
+
+
+
+
+
+FILE_NAME = 'path/to/file'
+
+# Use open() to get a filehandle that can access the file
+fh = open(FILE_NAME)
+
+# Loop through the file 
+for line in fh:
+  print(line)
+
+# The filehandle object provides many basic file operations:
+fh.read(64)     # read the specified bytes from the file (if no byte size is specified, then the entire file is read)
+fh.readline()   # read a single line from the file (up to a newline character - \n)
+fh.write('some data here')  # write a string to the file (make sure the file was open()'ed for writing!)
+fh.close()      # close the file when you're finished with it
+
+  
+# Alternately, skip the assignment to the filehandle altogether:
+for line in open(FILE_NAME):
+  print(line)
+
+# The loop example above is memory-efficient, and also easy to read
+
+
+
+
+
+
+
+
+
+
+
+
+# Let's say you have a string like this
+
+my_string = "apple banana peach pear orange"
+
+# You want to split it apart based on words (using the spaces as delimiters)
+#   FYI: splitting apart a larger string into smaller ones (especially by 
+#        spaces) is called 'tokenizing' a string
+
+items = my_string.split() # by default, split uses spaces
+
+# Now, items looks like this:
+
+items == ['apple', 'banana', 'peach', 'pear', 'orange']
+
+# split() always returns a list, so you can use the results of that function like any other list:
+
+for item in my_string.split()
+    print(item)
+  
+# If you need to use a different character (rather than a space) as the delimiter:
+
+log_line = "localhost:2020-09-12:foo:404"
+items = log_line.split(':') # i fyou pass an argument to split(), it uses that as the delimiter
+
+# The result is still a list:
+
+items == ['localhost', '2020-09-12', 'foo', '404']
